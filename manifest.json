@@ -1,0 +1,32 @@
+{
+    "name": "数据下载",
+    "version": "3.0",
+    "author": "www.mlln.cn",
+    "homepage_url": "https://mlln.cn",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://index.baidu.com/*"
+        ],
+        "all_frames": true,
+        "js": ["baiduindex.content-script.js", "jquery.min.js"]
+      }, 
+      {
+        "matches": [
+          "https://markets.businessinsider.com/*"
+        ],
+        "all_frames": true,
+        "js": ["jquery.min.js", "businessinsider.content-script.js"]
+      }
+    ],
+    "action": {},
+    "permissions": [
+        "webRequest",
+        "https://index.baidu.com/*",
+        "https://markets.businessinsider.com/*"
+    ]
+  }
